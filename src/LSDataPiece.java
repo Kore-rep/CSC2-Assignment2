@@ -28,13 +28,13 @@ public class LSDataPiece implements Comparable<LSDataPiece> {
      * @param line specified line from text file
      */
     private void processLine(String line) {
-        int spaceIndex = line.indexOf(" ");
+        int spaceIndex = line.indexOf(" "); // find the index of the space
 
         if (spaceIndex == -1) {
-            this.key = line;
+            this.key = line; // if there's no space, it must be a "key-only" search object
         } else {
-            this.key = line.substring(0, spaceIndex);
-            this.areas = line.substring(spaceIndex + 1);
+            this.key = line.substring(0, spaceIndex); // otherwise divide the string into its key
+            this.areas = line.substring(spaceIndex + 1); // and its area codes
         }
     }
 

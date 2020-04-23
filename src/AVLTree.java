@@ -10,7 +10,7 @@
  */
 public class AVLTree<dataType extends Comparable<? super dataType>> extends BinaryTree<dataType>
 {
-   public int opCount = 0;
+   public int searchCount = 0;
    public int inCount = 0;
 
    /** An accessor method for the node instance variable, height
@@ -86,6 +86,7 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
    public BinaryTreeNode<dataType> balance ( BinaryTreeNode<dataType> p )
    {
       fixHeight (p);
+      inCount++;
       if (balanceFactor (p) == 2)
       {
          if (balanceFactor (p.right) < 0)
@@ -117,10 +118,11 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
     * @return A call for balance(node) where node is the newly inserted node
     */
    public BinaryTreeNode<dataType> insert ( dataType d, BinaryTreeNode<dataType> node )
-   {
+   {  
+      inCount++; // Instrumentation
       if (node == null)
          return new BinaryTreeNode<dataType> (d, null, null);
-      inCount++; // Instrumentation
+      
       if (d.compareTo (node.data) <= 0)
          node.left = insert (d, node.left);
       else
@@ -210,7 +212,7 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
     */
    public BinaryTreeNode<dataType> find ( dataType d, BinaryTreeNode<dataType> node )
    {
-      opCount++; // Instrumentation
+      searchCount++; // Instrumentation
       if (d.compareTo (node.data) == 0) 
          return node;
       else if (d.compareTo (node.data) < 0)

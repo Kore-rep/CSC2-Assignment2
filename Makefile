@@ -7,6 +7,7 @@ JAVAC=/usr/bin/javac
 .SUFFIXES: .java .class
 SRCDIR=src
 BINDIR=bin
+DOCDIR=doc
 
 $(BINDIR)/%.class:$(SRCDIR)/%.java
 	$(JAVAC) -d $(BINDIR)/ -cp $(BINDIR) $<
@@ -27,11 +28,15 @@ default: $(CLASS_FILES)
 
 clean:
 	rm $(BINDIR)/*.class
+cleandocs:
+	rm -r $(DOCDIR)/*
 run:
-	java -cp bin LSArrayApp
+	java -cp $(BINDIR) AVLApp
 run2:
-	java -cp bin LSArrayApp "8" "16" "20"
+	java -cp $(BINDIR) AVLApp "8" "16" "20"
 run3:
-	java -cp bin BSTApp
+	java -cp $(BINDIR) BSTApp
 run4:
-	java -cp bin BSTApp "8" "16" "20"
+	java -cp $(BINDIR) BSTApp "8" "16" "20"
+docs:
+	javadoc -d $(DOCDIR) src/*.java
