@@ -1,4 +1,0 @@
-Search : 
-Could not find any areas!
-Searching took 408 comparisons
-Inserting took 270100 comparisons

@@ -36,7 +36,8 @@ public class BSTApp {
                 
             } */
             else { // If given only one argument, simply load the default data set entirely
-                processFile("/home/angus/Documents/CSC2/Assignment2/src/LSData.txt");
+                bt.inCount = 0;
+                processFile("LSData.txt");
             }
             
             

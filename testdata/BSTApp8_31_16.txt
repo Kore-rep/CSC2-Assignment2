@@ -1,4 +1,0 @@
-Search : 
-8_31_16 12, 4, 8, 16, 9, 1, 5, 13
-Searching took 393 comparisons
-Inserting took 270100 comparisons

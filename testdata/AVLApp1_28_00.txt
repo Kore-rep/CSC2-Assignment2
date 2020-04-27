@@ -1,4 +1,0 @@
-Search : 
-1_28_00 7
-Searching took 9 comparisons
-Inserting took 67578 comparisons

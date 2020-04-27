@@ -1,4 +1,0 @@
-Search : 
-4_21_18 11, 3, 7, 15
-Searching took 147 comparisons
-Inserting took 270100 comparisons
